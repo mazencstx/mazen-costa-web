@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DURHAM — Egypt Streetwear. Nothing Extra.</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="../logo.jpeg">
+  <script src="./demo-data.js"></script>
+  <script src="./demo-mode.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="wrap">
+      <div class="nav-left">
+        <a class="nav-link" href="./shop.html">Shop</a>
+        <a class="nav-link" href="./about.html">About</a>
+      </div>
+      <a class="logo" href="./index.html">DURHAM</a>
+      <div class="nav-right">
+        <button class="nav-icon-btn" data-search-toggle>Search</button>
+        <button class="nav-icon-btn" data-cart-toggle>Cart (<span data-cart-count>0</span>)</button>
+      </div>
+    </div>
+    <div class="search-panel" data-search-panel>
+      <div class="wrap">
+        <form>
+          <input class="search-input" type="text" placeholder="Search products…" />
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-image-wrap">
+      <img class="hero-image" src="./images/products/black-tee-fill.png" alt="DURHAM oversized black tee" />
+    </div>
+    <div class="hero-content">
+      <div class="wrap">
+        <h1 class="hero-tagline">Egypt Streetwear. Nothing Extra.</h1>
+        <a class="btn btn-outline" href="./shop.html">Shop Now</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Featured</h2>
+      <div class="product-grid featured-grid">
+        <a class="product-card" href="./product.html?id=1">
+          <div class="product-image-wrap">
+            <img src="./images/products/black-tee-fill.png" alt="Phantom Boxy Tee" />
+          </div>
+          <div class="product-name">Phantom Boxy Tee</div>
+          <div class="product-price">EGP 899</div>
+        </a>
+        <a class="product-card" href="./product.html?id=6">
+          <div class="product-image-wrap">
+            <img src="./images/products/white-tee-fill.png" alt="Raw Chalk Tee" />
+          </div>
+          <div class="product-name">Raw Chalk Tee</div>
+          <div class="product-price">EGP 899</div>
+        </a>
+        <a class="product-card" href="./product.html?id=4">
+          <div class="product-image-wrap">
+            <img src="./images/products/black-tee-fill.png" alt="Midnight Statement Tee" />
+          </div>
+          <div class="product-name">Midnight Statement Tee</div>
+          <div class="product-price">EGP 999</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="section-title">Duality Collection</h2>
+      <div class="duality-grid">
+        <a class="product-card duality-card" href="./product.html?id=11">
+          <div class="product-image-wrap wide">
+            <img src="./images/products/duality-pair-fill.png" alt="Duality Tee" />
+          </div>
+          <div class="product-name">Duality Tee</div>
+          <div class="product-price">EGP 1,699</div>
+        </a>
+        <a class="product-card duality-card" href="./product.html?id=12">
+          <div class="product-image-wrap wide">
+            <img src="./images/products/duality-pair-fill.png" alt="Monochrome Apex Tee" />
+          </div>
+          <div class="product-name">Monochrome Apex Tee</div>
+          <div class="product-price">EGP 1,699</div>
+        </a>
+        <a class="product-card duality-card" href="./product.html?id=13">
+          <div class="product-image-wrap wide">
+            <img src="./images/products/duality-pair-fill.png" alt="Binary Cut Tee" />
+          </div>
+          <div class="product-name">Binary Cut Tee</div>
+          <div class="product-price">EGP 1,699</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="wrap trust-grid">
+      <div>
+        <div class="trust-icon">＋</div>
+        <div class="trust-label">Premium Quality</div>
+      </div>
+      <div>
+        <div class="trust-icon">◆</div>
+        <div class="trust-label">Made in Egypt</div>
+      </div>
+      <div>
+        <div class="trust-icon">■</div>
+        <div class="trust-label">Secure Payment</div>
+      </div>
+      <div>
+        <div class="trust-icon">▲</div>
+        <div class="trust-label">Fast Delivery</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-logo">DURHAM</div>
+        <div class="footer-links">
+          <a href="./shop.html">Shop</a>
+          <a href="./about.html">About</a>
+          <a href="./cart.html">Cart</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 DURHAM. Egypt.</div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay" data-drawer-overlay></div>
+  <aside class="cart-drawer" data-cart-drawer>
+    <div class="cart-drawer-header">
+      <span>Your Cart</span>
+      <button class="drawer-close" data-drawer-close aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-drawer-items" data-drawer-items></div>
+    <div class="cart-drawer-footer">
+      <div class="summary-row summary-total">
+        <span>Total</span>
+        <span data-drawer-total>EGP 0</span>
+      </div>
+      <a href="./cart.html" class="btn btn-primary btn-full">View Cart</a>
+    </div>
+  </aside>
+
+  <script src="./js/cart.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/cart-drawer.js"></script>
+</body>
+</html>

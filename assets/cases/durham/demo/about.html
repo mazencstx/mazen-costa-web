@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — DURHAM</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="../logo.jpeg">
+  <script src="./demo-data.js"></script>
+  <script src="./demo-mode.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="wrap">
+      <div class="nav-left">
+        <a class="nav-link" href="./shop.html">Shop</a>
+        <a class="nav-link" href="./about.html">About</a>
+      </div>
+      <a class="logo" href="./index.html">DURHAM</a>
+      <div class="nav-right">
+        <button class="nav-icon-btn" data-search-toggle>Search</button>
+        <button class="nav-icon-btn" data-cart-toggle>Cart (<span data-cart-count>0</span>)</button>
+      </div>
+    </div>
+    <div class="search-panel" data-search-panel>
+      <div class="wrap">
+        <form>
+          <input class="search-input" type="text" placeholder="Search products…" />
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <div class="wrap">
+      <h1>Egypt Streetwear. Nothing Extra.</h1>
+    </div>
+  </section>
+
+  <section class="about-body">
+    <p>DURHAM is an Egyptian streetwear label built on restraint. No prints, no color, no noise — just black, white, and clean silhouettes cut for the way Egypt actually moves.</p>
+    <p>Every piece is oversized or regular-fit, heavyweight cotton, made close to home. The name on the tag stays quiet. The fit does the talking.</p>
+    <p>We believe the fewer decisions a garment forces on you, the longer it stays in rotation. That's the whole philosophy — nothing extra.</p>
+  </section>
+
+  <section class="wrap about-values">
+    <div>
+      <h3>Black &amp; White Only</h3>
+      <p>No exceptions. Two colors, done properly, is more than enough.</p>
+    </div>
+    <div>
+      <h3>Made in Egypt</h3>
+      <p>Produced locally, cut for local bodies and local heat.</p>
+    </div>
+    <div>
+      <h3>Heavyweight Cotton</h3>
+      <p>Built to hold shape wash after wash — no thin, disposable fabric.</p>
+    </div>
+    <div>
+      <h3>No Loud Branding</h3>
+      <p>The DURHAM name lives on the inside label, not across your chest.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-logo">DURHAM</div>
+        <div class="footer-links">
+          <a href="./shop.html">Shop</a>
+          <a href="./about.html">About</a>
+          <a href="./cart.html">Cart</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 DURHAM. Egypt.</div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay" data-drawer-overlay></div>
+  <aside class="cart-drawer" data-cart-drawer>
+    <div class="cart-drawer-header">
+      <span>Your Cart</span>
+      <button class="drawer-close" data-drawer-close aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-drawer-items" data-drawer-items></div>
+    <div class="cart-drawer-footer">
+      <div class="summary-row summary-total">
+        <span>Total</span>
+        <span data-drawer-total>EGP 0</span>
+      </div>
+      <a href="./cart.html" class="btn btn-primary btn-full">View Cart</a>
+    </div>
+  </aside>
+
+  <script src="./js/cart.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/cart-drawer.js"></script>
+</body>
+</html>

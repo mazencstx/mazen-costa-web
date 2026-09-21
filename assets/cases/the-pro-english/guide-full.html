@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل صناعة المحتوى الشامل // THE PRO ENGLISH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple:       #4B2CBF;
+      --purple-acc:   #6D4CFF;
+      --purple-dim:   rgba(75,44,191,0.12);
+      --purple-glow:  rgba(75,44,191,0.25);
+      --navy:         #1A1A2E;
+      --navy2:        #0D0A2E;
+      --white:        #FFFFFF;
+      --white-dim:    #9090A8;
+      --light:        #F4F6FB;
+      --border:       rgba(75,44,191,0.2);
+      --green:        #22C55E;
+      --red-soft:     #EF4444;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy2);
+      color: var(--white);
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(13,10,46,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid var(--purple);
+      padding: 14px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .nav-brand span { color: var(--purple-acc); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--white-dim);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--purple-acc); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(75,44,191,0.18) 0%, transparent 70%),
+        linear-gradient(180deg, #0D0A2E 0%, #1A1A2E 100%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 52px 52px;
+      opacity: 0.35;
+    }
+
+    .hero * { position: relative; }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 10px 28px;
+      margin-bottom: 36px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--purple-acc);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .hero-pill-dot {
+      width: 8px; height: 8px;
+      background: var(--purple-acc);
+      border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(1.4); }
+    }
+
+    .hero-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: clamp(44px, 8vw, 100px);
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .hero-title .acc { color: var(--purple-acc); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--white-dim);
+      max-width: 750px;
+      line-height: 2;
+      margin-bottom: 48px;
+    }
+
+    /* content type badges */
+    .type-badges {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .type-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .type-badge-icon { font-size: 22px; }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--purple), var(--purple-acc), var(--purple), transparent);
+    }
+
+    /* ─── SECTION ─── */
+    .section {
+      padding: 96px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section.alt { background: var(--navy); }
+
+    .section.light {
+      background: var(--light);
+      color: var(--navy);
+    }
+
+    .sec-head {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      margin-bottom: 64px;
+    }
+
+    .sec-num {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 100px;
+      line-height: 1;
+      color: rgba(109,76,255,0.12);
+      border-right: 3px solid var(--purple);
+      padding-right: 32px;
+      flex-shrink: 0;
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .sec-tag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--purple-acc);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .sec-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .sec-desc {
+      font-size: 17px;
+      color: var(--white-dim);
+      max-width: 680px;
+      line-height: 2;
+    }
+
+    .section.light .sec-desc { color: #666; }
+    .section.light .sec-title { color: var(--navy); }
+    .section.light .sec-tag { color: var(--purple); }
+    .section.light .sec-num { color: rgba(75,44,191,0.12); }
+
+    /* ─── TOOLS ROW ─── */
+    .tools-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 3px;
+    }
+
+    .tool-card {
+      background: #080516;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--purple-acc);
+      padding: 36px 32px;
+    }
+
+    .tool-emoji { font-size: 40px; margin-bottom: 16px; display: block; }
+
+    .tool-num {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--purple-dim);
+      line-height: 1;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .tool-name {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .tool-desc {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 2;
+    }
+
+    /* ─── CONTENT TYPE CARDS ─── */
+    .content-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .ct-card {
+      background: #080516;
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ct-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+
+    .ct-card.carousel::before { background: var(--purple); }
+    .ct-card.facebook::before { background: var(--purple-acc); }
+    .ct-card.reels::before { background: linear-gradient(90deg, var(--purple), var(--purple-acc)); }
+
+    .ct-icon { font-size: 48px; margin-bottom: 20px; display: block; }
+
+    .ct-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--purple-acc);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .ct-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .ct-desc {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .ct-specs { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .spec-tag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      color: var(--purple-acc);
+      border-radius: 4px;
+    }
+
+    /* ─── STEPS ─── */
+    .steps { display: flex; flex-direction: column; }
+
+    .step {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 60px;
+      color: var(--purple);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 72px;
+      text-align: center;
+    }
+
+    .step-badge {
+      display: inline-block;
+      background: var(--purple-dim);
+      border: 1px solid var(--border);
+      color: var(--purple-acc);
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 4px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .step-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .step-body {
+      font-size: 16px;
+      color: var(--white-dim);
+      line-height: 2;
+    }
+
+    .step-body strong { color: var(--white); }
+
+    .step-body .cmd {
+      display: inline-block;
+      background: #080516;
+      border: 1px solid var(--border);
+      color: #C8C0FF;
+      font-family: 'Poppins', monospace;
+      font-size: 14px;
+      padding: 8px 20px;
+      border-radius: 4px;
+      margin: 8px 0;
+      direction: ltr;
+    }
+
+    /* ─── HIGHLIGHT BOX ─── */
+    .highlight {
+      background: var(--purple-dim);
+      border-right: 4px solid var(--purple-acc);
+      border-radius: 0 8px 8px 0;
+      padding: 28px 36px;
+      margin: 32px 0;
+    }
+
+    .hl-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--purple-acc);
+      margin-bottom: 10px;
+    }
+
+    .highlight p {
+      font-size: 15px;
+      color: var(--white-dim);
+      line-height: 2;
+    }
+
+    /* ─── CODE BLOCK ─── */
+    .code-wrap { margin: 24px 0; }
+
+    .code-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--purple-acc);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .code-block {
+      background: #060412;
+      border: 1px solid var(--border);
+      border-right: 4px solid var(--purple);
+      border-radius: 8px;
+      padding: 32px 36px;
+      overflow-x: auto;
+    }
+
+    .code-block pre {
+      font-family: 'Poppins', monospace;
+      font-size: 13px;
+      color: #C8C0FF;
+      line-height: 2.2;
+      white-space: pre-wrap;
+      word-break: break-word;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .code-block pre .var { color: #FFD700; font-weight: 700; }
+    .code-block pre .com { color: #666; font-style: italic; }
+
+    /* ─── POST TYPE SHOWCASE ─── */
+    .post-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .post-mock {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .post-mock-top {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+      text-align: center;
+    }
+
+    .post-mock.educational .post-mock-top { background: #fff; color: var(--navy); }
+    .post-mock.quote .post-mock-top { background: var(--navy); }
+    .post-mock.promo .post-mock-top { background: var(--purple); }
+    .post-mock.proof .post-mock-top { background: #fff; color: var(--navy); }
+    .post-mock.ba .post-mock-top { background: #fff; color: var(--navy); }
+
+    .post-mock-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .post-mock.educational .post-mock-label { color: var(--purple); }
+    .post-mock.quote .post-mock-label { color: var(--purple-acc); }
+    .post-mock.promo .post-mock-label { color: rgba(255,255,255,0.8); }
+    .post-mock.proof .post-mock-label { color: var(--purple); }
+    .post-mock.ba .post-mock-label { color: var(--purple); }
+
+    .post-mock-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .post-mock.educational .post-mock-title,
+    .post-mock.proof .post-mock-title,
+    .post-mock.ba .post-mock-title { color: var(--navy); }
+
+    .post-mock.quote .post-mock-title,
+    .post-mock.promo .post-mock-title { color: var(--white); }
+
+    .post-mock-bottom {
+      padding: 14px 20px;
+      background: var(--navy);
+      font-family: 'Cairo', sans-serif;
+      font-size: 12px;
+      color: var(--white-dim);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── SHOTS TIMELINE ─── */
+    .shots-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 32px;
+    }
+
+    .shot-item {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .shot-time {
+      width: 110px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px;
+    }
+
+    .shot-time-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--purple-acc);
+      white-space: nowrap;
+    }
+
+    .shot-line {
+      flex: 1;
+      width: 2px;
+      background: var(--border);
+      margin-top: 8px;
+    }
+
+    .shot-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--purple);
+      border-radius: 50%;
+      border: 2px solid var(--purple-acc);
+      flex-shrink: 0;
+    }
+
+    .shot-content {
+      flex: 1;
+      background: #080516;
+      border: 1px solid var(--border);
+      border-right: 3px solid var(--purple);
+      padding: 20px 28px;
+      margin: 8px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .shot-name {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .shot-desc {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.9;
+    }
+
+    /* ─── RULES LIST ─── */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-top: 8px;
+    }
+
+    .rule-col { display: flex; flex-direction: column; gap: 0; }
+
+    .rule-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rule-item:last-child { border-bottom: none; }
+
+    .rule-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+    .rule-text {
+      font-size: 15px;
+      color: var(--white-dim);
+      line-height: 1.9;
+    }
+
+    .rule-text strong { color: var(--white); }
+
+    /* ─── TABLE ─── */
+    .tbl-wrap { overflow-x: auto; margin: 32px 0; }
+
+    table { width: 100%; border-collapse: collapse; }
+
+    th {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--purple-acc);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--purple);
+      padding: 14px 20px;
+      text-align: right;
+      background: #060412;
+    }
+
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: #ccc;
+      vertical-align: top;
+    }
+
+    tr:hover td { background: var(--purple-dim); }
+
+    .td-acc { color: var(--purple-acc); font-weight: 700; font-family: 'Cairo'; }
+
+    /* ─── BIG CALLOUT ─── */
+    .callout {
+      padding: 72px 64px;
+      text-align: center;
+    }
+
+    .callout.purple-bg {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-acc) 100%);
+    }
+
+    .callout.dark-bg {
+      background: var(--navy);
+      border-top: 3px solid var(--purple);
+      border-bottom: 3px solid var(--purple);
+    }
+
+    .callout-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 5vw, 60px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .callout-sub {
+      font-size: clamp(16px, 2vw, 22px);
+      opacity: 0.85;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 2;
+    }
+
+    /* ─── IDEAS CARDS ─── */
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 3px;
+    }
+
+    .idea-card {
+      background: #080516;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--purple);
+      padding: 32px 28px;
+      transition: transform 0.3s, border-top-color 0.3s;
+    }
+
+    .idea-card:hover {
+      transform: translateY(-4px);
+      border-top-color: var(--purple-acc);
+    }
+
+    .idea-type {
+      font-family: 'Poppins', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--purple-acc);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .idea-emoji { font-size: 32px; margin-bottom: 12px; display: block; }
+
+    .idea-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .idea-desc {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 2;
+    }
+
+    .idea-tags { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+
+    .idea-tag {
+      font-size: 10px;
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      color: var(--purple-acc);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      border-radius: 3px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      border-top: 3px solid var(--purple);
+      padding: 52px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    .footer-brand span { color: var(--purple-acc); }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-slogan {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--purple-acc);
+      margin-bottom: 6px;
+    }
+
+    .footer-url {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: var(--white-dim);
+    }
+
+    .footer-meta {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      color: #444;
+      text-align: left;
+      line-height: 2;
+    }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 12px 24px; }
+      .nav-links { display: none; }
+      .hero, .section, .callout { padding: 80px 24px; }
+      .sec-head { flex-direction: column; }
+      .content-types { grid-template-columns: 1fr; }
+      .rules-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-meta { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-brand">THE PRO <span>ENGLISH</span></div>
+  <ul class="nav-links">
+    <li><a href="#tools">الأدوات</a></li>
+    <li><a href="#carousel">كاروسيل</a></li>
+    <li><a href="#facebook">فيسبوك</a></li>
+    <li><a href="#reels">ريلز</a></li>
+    <li><a href="#ideas">أفكار</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-pill">
+    <div class="hero-pill-dot"></div>
+    THE PRO ENGLISH // دليل صناعة المحتوى الشامل
+  </div>
+
+  <h1 class="hero-title">
+    صنّع محتوى<br>
+    <span class="acc">احترافي بالـ AI</span><br>
+    في 30 دقيقة
+  </h1>
+
+  <p class="hero-sub">
+    الدليل الرسمي لفريق The Pro English —
+    إزاي تعمل كاروسيل وبوستات Facebook وReels
+    بهوية البراند الثابتة بأسهل طريقة.
+  </p>
+
+  <div class="type-badges">
+    <div class="type-badge">
+      <span class="type-badge-icon">🎠</span>
+      Instagram Carousel
+    </div>
+    <div class="type-badge">
+      <span class="type-badge-icon">📘</span>
+      Facebook Posts
+    </div>
+    <div class="type-badge">
+      <span class="type-badge-icon">🎬</span>
+      Reels & Videos
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── SECTION 1: TOOLS ─── -->
+<div id="tools" class="section alt reveal">
+  <div class="sec-head">
+    <div class="sec-num">1</div>
+    <div>
+      <span class="sec-tag">THE TOOLS</span>
+      <h2 class="sec-title">الأدوات اللي هتستخدمها</h2>
+      <p class="sec-desc">محتاج 3 أدوات بس — وهتعمل محتوى بمستوى agency كامل.</p>
+    </div>
+  </div>
+
+  <div class="tools-row">
+    <div class="tool-card">
+      <span class="tool-emoji">🤖</span>
+      <div class="tool-num">01</div>
+      <div class="tool-name">Claude (claude.ai)</div>
+      <div class="tool-desc">
+        بتقوله نوع المحتوى والموضوع —
+        وهو بيكتبلك البرومتات الكاملة
+        بهوية The Pro English تلقائياً.
+        مش محتاج تكتب حاجة.
+      </div>
+    </div>
+    <div class="tool-card">
+      <span class="tool-emoji">🎨</span>
+      <div class="tool-num">02</div>
+      <div class="tool-name">GPT Image 2</div>
+      <div class="tool-desc">
+        بتحط البرومت — وبيطلعلك
+        صورة بالألوان والخطوط
+        والاستايل بتاع البراند بالظبط.
+        للكاروسيل والبوستات.
+      </div>
+    </div>
+    <div class="tool-card">
+      <span class="tool-emoji">🎬</span>
+      <div class="tool-num">03</div>
+      <div class="tool-name">Seedance 2.0</div>
+      <div class="tool-desc">
+        لعمل الـ Reels والفيديوهات
+        بالـ AI — shot by shot.
+        بتولد كل shot لوحده وبعدين
+        بتجمعهم في CapCut.
+      </div>
+    </div>
+    <div class="tool-card">
+      <span class="tool-emoji">✂️</span>
+      <div class="tool-num">04</div>
+      <div class="tool-name">CapCut</div>
+      <div class="tool-desc">
+        بعد الـ generation —
+        بتجمع الـ shots وتضيف
+        النص العربي والموسيقى
+        والـ logo كـ overlay.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 2: CONTENT TYPES ─── -->
+<div class="section reveal">
+  <div class="sec-head">
+    <div class="sec-num">2</div>
+    <div>
+      <span class="sec-tag">CONTENT TYPES</span>
+      <h2 class="sec-title">3 أنواع المحتوى</h2>
+      <p class="sec-desc">كل نوع ليه أداة معينة وطريقة معينة. اختار اللي محتاجه وابدأ.</p>
+    </div>
+  </div>
+
+  <div class="content-types">
+    <div class="ct-card carousel">
+      <span class="ct-icon">🎠</span>
+      <span class="ct-label">INSTAGRAM</span>
+      <div class="ct-title">كاروسيل Instagram</div>
+      <div class="ct-desc">
+        8 slides بهوية البراند —
+        Hook قوي + محتوى تعليمي + CTA.
+        أفضل نوع لـ engagement وsave.
+      </div>
+      <div class="ct-specs">
+        <span class="spec-tag">8 Slides</span>
+        <span class="spec-tag">GPT Image 2</span>
+        <span class="spec-tag">1080×1080</span>
+        <span class="spec-tag">Claude Prompts</span>
+      </div>
+    </div>
+    <div class="ct-card facebook">
+      <span class="ct-icon">📘</span>
+      <span class="ct-label">FACEBOOK</span>
+      <div class="ct-title">بوست Facebook</div>
+      <div class="ct-desc">
+        صورة واحدة قوية تشد الناس —
+        5 أنواع: تعليمي / تحفيزي / إعلاني
+        / قصة نجاح / قبل وبعد.
+      </div>
+      <div class="ct-specs">
+        <span class="spec-tag">صورة واحدة</span>
+        <span class="spec-tag">GPT Image 2</span>
+        <span class="spec-tag">1200×630</span>
+        <span class="spec-tag">5 أنواع</span>
+      </div>
+    </div>
+    <div class="ct-card reels">
+      <span class="ct-icon">🎬</span>
+      <span class="ct-label">REELS & VIDEO</span>
+      <div class="ct-title">Reels وفيديوهات</div>
+      <div class="ct-desc">
+        shots منفصلة بـ Seedance 2.0 —
+        بتجمعهم في CapCut وتضيف
+        النص العربي والموسيقى.
+      </div>
+      <div class="ct-specs">
+        <span class="spec-tag">Seedance 2.0</span>
+        <span class="spec-tag">CapCut</span>
+        <span class="spec-tag">9:16 Vertical</span>
+        <span class="spec-tag">Shot by Shot</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CALLOUT 1 ─── -->
+<div class="callout purple-bg reveal">
+  <div class="callout-title">الـ System بسيط جداً</div>
+  <div class="callout-sub">
+    Claude → يكتب البرومت<br>
+    GPT Image 2 أو Seedance → يولد المحتوى<br>
+    CapCut → تضيف النص والموسيقى<br>
+    Instagram / Facebook → تنشر
+  </div>
+</div>
+
+<!-- ─── SECTION 3: CAROUSEL STEPS ─── -->
+<div id="carousel" class="section alt reveal">
+  <div class="sec-head">
+    <div class="sec-num">3</div>
+    <div>
+      <span class="sec-tag">CAROUSEL — STEP BY STEP</span>
+      <h2 class="sec-title">إزاي تعمل كاروسيل Instagram</h2>
+      <p class="sec-desc">من الفكرة لـ 8 صور جاهزة في أقل من 20 دقيقة.</p>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-badge">CLAUDE.AI</div>
+        <div class="step-title">افتح Claude وابعت الرسالة دي</div>
+        <div class="step-body">
+          روح على <strong>claude.ai</strong> وابعت:<br>
+          <span class="cmd">"اعمليلي كاروسيل عن [الموضوع] — The Pro English"</span><br>
+          مثال: "اعمليلي كاروسيل عن أشهر 5 غلطات في الإنجليزي — The Pro English"
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-badge">CLAUDE OUTPUT</div>
+        <div class="step-title">Claude بيولّد 8 برومتات جاهزة</div>
+        <div class="step-body">
+          هيطلعلك برومت لكل slide — واحد واحد.
+          كل برومت فيه الألوان والخط واللوجو والمحتوى بالتفصيل.
+          <strong>مش هتكتب حاجة — copy/paste بس.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-badge">GPT IMAGE 2</div>
+        <div class="step-title">افتح ChatGPT وابدأ بـ Slide 01</div>
+        <div class="step-body">
+          روح ChatGPT — خد برومت الـ Slide 01 من Claude — الصقه وابعته.
+          <strong>استنى 10-15 ثانية</strong> والصورة هتتولد بهوية البراند.
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-badge">REPEAT × 8</div>
+        <div class="step-title">كرر لـ 8 slides — واحدة واحدة</div>
+        <div class="step-body">
+          خد كل برومت من Claude وحطه في ChatGPT.
+          8 slides = 8 صور جاهزة — <strong>المدة الإجمالية: 15-20 دقيقة.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-badge">INSTAGRAM</div>
+        <div class="step-title">ارفع الـ 8 صور بالترتيب</div>
+        <div class="step-body">
+          رتبهم 01 ← 08 وارفعهم كـ carousel.
+          الصق الـ caption اللي Claude كتهولك كمان.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Slide</th>
+          <th>الخلفية</th>
+          <th>المحتوى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-acc">01 — HOOK</td><td>بنفسجي #4B2CBF</td><td>سؤال ضخم + "← اسحب"</td></tr>
+        <tr><td class="td-acc">02–06 — CONTENT</td><td>أبيض #FFFFFF</td><td>رقم ضخم + عنوان + شرح + أيقونة</td></tr>
+        <tr><td class="td-acc">07 — SUMMARY</td><td>أبيض #FFFFFF</td><td>الخلاصة + box بنفسجي</td></tr>
+        <tr><td class="td-acc">08 — CTA</td><td>داكن #1A1A2E</td><td>headline + ⭐ + زر + trust badges</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─── SECTION 4: FACEBOOK POSTS ─── -->
+<div id="facebook" class="section reveal">
+  <div class="sec-head">
+    <div class="sec-num">4</div>
+    <div>
+      <span class="sec-tag">FACEBOOK POSTS</span>
+      <h2 class="sec-title">بوستات Facebook — صورة واحدة</h2>
+      <p class="sec-desc">5 أنواع بوستات — كل نوع ليه هدف مختلف. اختار المناسب وقوله لـ Claude.</p>
+    </div>
+  </div>
+
+  <div class="post-types-grid">
+    <div class="post-mock educational">
+      <div class="post-mock-top">
+        <div>
+          <div class="post-mock-label">EDUCATIONAL</div>
+          <div class="post-mock-title">نصيحة تعليمية يومية</div>
+        </div>
+      </div>
+      <div class="post-mock-bottom">خلفية بيضاء · شريط بنفسجي أعلى · نص + مثال</div>
+    </div>
+    <div class="post-mock quote">
+      <div class="post-mock-top">
+        <div>
+          <div class="post-mock-label">MOTIVATION</div>
+          <div class="post-mock-title">اقتباس تحفيزي قوي</div>
+        </div>
+      </div>
+      <div class="post-mock-bottom">خلفية داكنة · glow بنفسجي · اقتباس كبير</div>
+    </div>
+    <div class="post-mock promo">
+      <div class="post-mock-top">
+        <div>
+          <div class="post-mock-label">PROMOTIONAL</div>
+          <div class="post-mock-title">إعلان كورس أو عرض</div>
+        </div>
+      </div>
+      <div class="post-mock-bottom">خلفية بنفسجي · تفاصيل الكورس · CTA</div>
+    </div>
+    <div class="post-mock proof">
+      <div class="post-mock-top">
+        <div>
+          <div class="post-mock-label">SOCIAL PROOF</div>
+          <div class="post-mock-title">قصة نجاح طالب</div>
+        </div>
+      </div>
+      <div class="post-mock-bottom">خلفية بيضاء · quote كبير · بيانات الطالب</div>
+    </div>
+    <div class="post-mock ba">
+      <div class="post-mock-top">
+        <div>
+          <div class="post-mock-label">BEFORE & AFTER</div>
+          <div class="post-mock-title">قبل وبعد الكورس</div>
+        </div>
+      </div>
+      <div class="post-mock-bottom">خلفية بيضاء · عمودين · رمز ❌ وعلامة ✅</div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top: 40px;">
+    <div class="hl-title">📌 إزاي تطلب بوست Facebook من Claude</div>
+    <p>
+      قوله بالظبط كده:<br>
+      <strong style="color:#C8C0FF; font-family: monospace;">"اعمليلي بوست Facebook [نوع البوست] عن [الموضوع] — The Pro English"</strong><br><br>
+      مثال: "اعمليلي بوست Facebook تعليمي عن الفرق بين Since وFor — The Pro English"<br>
+      مثال: "اعمليلي بوست Facebook قصة نجاح لطالب وصل IELTS 7 — The Pro English"
+    </p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-badge">CLAUDE</div>
+        <div class="step-title">قوله نوع البوست والموضوع</div>
+        <div class="step-body">Claude بيولدلك برومت واحد جاهز لـ GPT Image 2 فيه كل التفاصيل البصرية.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-badge">GPT IMAGE 2</div>
+        <div class="step-title">الصق البرومت وولّد الصورة</div>
+        <div class="step-body">صورة واحدة بهوية البراند الكاملة — <strong>الألوان والخط واللوجو كلها موجودة.</strong></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-badge">FACEBOOK</div>
+        <div class="step-title">انشر مع الـ Caption</div>
+        <div class="step-body">Claude بيكتبلك الـ Caption والهاشتاقات كمان — copy/paste وانشر.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 5: REELS ─── -->
+<div id="reels" class="section alt reveal">
+  <div class="sec-head">
+    <div class="sec-num">5</div>
+    <div>
+      <span class="sec-tag">REELS & MOTION VIDEO</span>
+      <h2 class="sec-title">Reels وفيديوهات الـ Motion</h2>
+      <p class="sec-desc">كل Reel = shots منفصلة. Claude بيكتب برومت لكل shot — وبتجمعهم في CapCut.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <div class="hl-title">⚡ القاعدة الأهم</div>
+    <p>
+      Seedance بتولد <strong style="color:white;">shot واحد في كل مرة</strong> (3-5 ثواني).<br>
+      Claude بيكتبلك برومت لكل shot — بعدين بتجمعهم في CapCut وتضيف النص العربي فوقيهم.
+    </p>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p style="font-size: 18px; font-weight: 900; margin-bottom: 28px; color: var(--purple-acc);">مثال — Hook Reel (15 ثانية)</p>
+
+    <div class="shots-timeline">
+      <div class="shot-item">
+        <div class="shot-time">
+          <div class="shot-time-label">0 — 3s</div>
+          <div class="shot-dot"></div>
+          <div class="shot-line"></div>
+        </div>
+        <div class="shot-content">
+          <div class="shot-name">SHOT 1 — Hook</div>
+          <div class="shot-desc">نص "Still struggling with English?" يظهر على خلفية داكنة ويتحول لـ "Not anymore." — kinetic text</div>
+        </div>
+      </div>
+      <div class="shot-item">
+        <div class="shot-time">
+          <div class="shot-time-label">3 — 7s</div>
+          <div class="shot-dot"></div>
+          <div class="shot-line"></div>
+        </div>
+        <div class="shot-content">
+          <div class="shot-name">SHOT 2 — Problem</div>
+          <div class="shot-desc">طالب frustrated، ألوان باردة desaturated — يعبّر عن الحالة قبل</div>
+        </div>
+      </div>
+      <div class="shot-item">
+        <div class="shot-time">
+          <div class="shot-time-label">7 — 12s</div>
+          <div class="shot-dot"></div>
+          <div class="shot-line"></div>
+        </div>
+        <div class="shot-content">
+          <div class="shot-name">SHOT 3 — Solution</div>
+          <div class="shot-desc">نفس الطالب واثق محترف، purple color grade دافي — الحالة بعد</div>
+        </div>
+      </div>
+      <div class="shot-item">
+        <div class="shot-time">
+          <div class="shot-time-label">12 — 15s</div>
+          <div class="shot-dot"></div>
+          <div class="shot-line" style="display:none;"></div>
+        </div>
+        <div class="shot-content">
+          <div class="shot-name">SHOT 4 — CTA</div>
+          <div class="shot-desc">لوجو The Pro English على navy داكن — اللينك يظهر بـ fade</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps" style="margin-top: 48px;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-badge">CLAUDE</div>
+        <div class="step-title">قوله نوع الـ Reel والموضوع</div>
+        <div class="step-body">
+          <span class="cmd">"اعمليلي Reel عن [الموضوع] — The Pro English"</span><br>
+          Claude بيكتبلك برومت لكل shot منفصل.
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-badge">SEEDANCE 2.0</div>
+        <div class="step-title">ولّد كل shot لوحده</div>
+        <div class="step-body">
+          الصق برومت الـ Shot الأول في Seedance — ولّده وحمّله.<br>
+          كرر لكل shot. <strong>كل shot = توليد منفصل.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-badge">CAPCUT</div>
+        <div class="step-title">جمّع الـ shots وضيف النص</div>
+        <div class="step-body">
+          رتب الـ shots بالترتيب.<br>
+          أضف النص العربي كـ text overlay — <strong>خط Cairo Bold · أبيض على داكن.</strong><br>
+          أضف موسيقى خلفية هادئة.
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-badge">EXPORT & PUBLISH</div>
+        <div class="step-title">Export وانشر</div>
+        <div class="step-body">
+          Export بـ <strong>1080p minimum · 30fps.</strong><br>
+          انشر على Instagram Reels + Facebook Reels في نفس الوقت.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 6: RULES ─── -->
+<div class="section reveal">
+  <div class="sec-head">
+    <div class="sec-num">6</div>
+    <div>
+      <span class="sec-tag">BRAND RULES</span>
+      <h2 class="sec-title">القواعد الثابتة — لا تتغير أبداً</h2>
+      <p class="sec-desc">عشان هوية البراند تفضل consistent في كل قطعة محتوى.</p>
+    </div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-col">
+      <div class="rule-item">
+        <span class="rule-icon">✅</span>
+        <span class="rule-text"><strong>اللوجو في كل قطعة محتوى</strong> — كاروسيل / بوست / فيديو بدون استثناء.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-icon">✅</span>
+        <span class="rule-text"><strong>الألوان ثابتة دايماً</strong> — #4B2CBF بنفسجي · #1A1A2E داكن · أبيض.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-icon">✅</span>
+        <span class="rule-text"><strong>Cairo Bold/Black للعربي</strong> — Poppins Bold للإنجليزي — دايماً.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-icon">✅</span>
+        <span class="rule-text"><strong>Trust badges في كل CTA</strong> — 12K+ طالب · 4.9/5 · ضمان سنة.</span>
+      </div>
+    </div>
+    <div class="rule-col">
+      <div class="rule-item">
+        <span class="rule-icon">❌</span>
+        <span class="rule-text"><strong>مفيش fonts تانية</strong> — Cairo وPoppins بس — مش خطوط تانية.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-icon">❌</span>
+        <span class="rule-text"><strong>مفيش ألوان برانية</strong> — الـ palette محدد ومش بيتغير.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-icon">❌</span>
+        <span class="rule-text"><strong>مفيش كلام عربي في برومتات Seedance</strong> — إنجليزي بس في الـ prompts.</span>
+      </div>
+      <div class="rule-item">
+        <span class="rule-icon">❌</span>
+        <span class="rule-text"><strong>مفيش صور في Hook slide</strong> — الـ slide 01 للكاروسيل typography فقط.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CALLOUT 2 ─── -->
+<div class="callout dark-bg reveal">
+  <div class="callout-title">مش محتاج تكتب برومت واحد بإيدك</div>
+  <div class="callout-sub">
+    قوله الموضوع — وهو بيجيب كل حاجة.
+  </div>
+</div>
+
+<!-- ─── SECTION 7: IDEAS ─── -->
+<div id="ideas" class="section alt reveal">
+  <div class="sec-head">
+    <div class="sec-num">7</div>
+    <div>
+      <span class="sec-tag">CONTENT IDEAS</span>
+      <h2 class="sec-title">أفكار محتوى جاهزة</h2>
+      <p class="sec-desc">قول أي فكرة من دول لـ Claude وهو بيولد المحتوى فوراً.</p>
+    </div>
+  </div>
+
+  <div class="ideas-grid">
+    <div class="idea-card">
+      <span class="idea-emoji">🚫</span>
+      <span class="idea-type">EDUCATIONAL — CAROUSEL</span>
+      <div class="idea-title">أشهر 5 غلطات في الإنجليزي</div>
+      <div class="idea-desc">I am agree / Since 5 years / I am boring — الغلطات اللي كل العرب بيعملوها</div>
+      <div class="idea-tags"><span class="idea-tag">8 Slides</span><span class="idea-tag">High Engagement</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">💼</span>
+      <span class="idea-type">EDUCATIONAL — CAROUSEL</span>
+      <div class="idea-title">5 جمل للـ Interview</div>
+      <div class="idea-desc">جمل إنجليزية جاهزة تقولها بثقة في أي مقابلة عمل</div>
+      <div class="idea-tags"><span class="idea-tag">8 Slides</span><span class="idea-tag">High Save</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">💡</span>
+      <span class="idea-type">EDUCATIONAL — FACEBOOK</span>
+      <div class="idea-title">الفرق بين Since وFor</div>
+      <div class="idea-desc">نصيحة يومية بسيطة في صورة واحدة قوية</div>
+      <div class="idea-tags"><span class="idea-tag">صورة واحدة</span><span class="idea-tag">Daily Tip</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">🏆</span>
+      <span class="idea-type">SOCIAL PROOF — FACEBOOK</span>
+      <div class="idea-title">من A2 لـ Vodafone UK</div>
+      <div class="idea-desc">قصة نجاح طالب حقيقي — أقوى دليل على فعالية الكورس</div>
+      <div class="idea-tags"><span class="idea-tag">Social Proof</span><span class="idea-tag">High Trust</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">🎬</span>
+      <span class="idea-type">HOOK REEL</span>
+      <div class="idea-title">"مش قادر تتكلم إنجليزي؟"</div>
+      <div class="idea-desc">15 ثانية — problem/solution — أكتر فيديو بيشتغل في العموم</div>
+      <div class="idea-tags"><span class="idea-tag">15s</span><span class="idea-tag">Seedance</span><span class="idea-tag">CapCut</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">⚡</span>
+      <span class="idea-type">EDUCATIONAL REEL</span>
+      <div class="idea-title">غلطة واحدة في 30 ثانية</div>
+      <div class="idea-desc">❌ غلط ← ✅ صح — بسيط وسريع وقابل للـ share</div>
+      <div class="idea-tags"><span class="idea-tag">30s</span><span class="idea-tag">High Share</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">📊</span>
+      <span class="idea-type">PROMO — FACEBOOK + CAROUSEL</span>
+      <div class="idea-title">إعلان كورس المحادثة</div>
+      <div class="idea-desc">تفاصيل الكورس — sessions / ضمان / عدد الطلاب — CTA قوي</div>
+      <div class="idea-tags"><span class="idea-tag">Promotional</span><span class="idea-tag">CTA Driven</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">🎯</span>
+      <span class="idea-type">PROMO REEL</span>
+      <div class="idea-title">IELTS 7+ — ممكن</div>
+      <div class="idea-desc">15 ثانية — السؤال + التفاصيل + قصة نجاح + CTA</div>
+      <div class="idea-tags"><span class="idea-tag">15s</span><span class="idea-tag">Course Promo</span></div>
+    </div>
+    <div class="idea-card">
+      <span class="idea-emoji">✨</span>
+      <span class="idea-type">BRAND — REEL</span>
+      <div class="idea-title">Logo Reveal للبروفايل</div>
+      <div class="idea-desc">4 ثواني — لوجو يتجمع من particles — للـ stories والبروفايل</div>
+      <div class="idea-tags"><span class="idea-tag">4s</span><span class="idea-tag">Brand Asset</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 8: COLORS ─── -->
+<div class="section reveal">
+  <div class="sec-head">
+    <div class="sec-num">8</div>
+    <div>
+      <span class="sec-tag">BRAND COLORS</span>
+      <h2 class="sec-title">الألوان الرسمية للبراند</h2>
+      <p class="sec-desc">الألوان دي موجودة في كل البرومتات تلقائياً — مش محتاج تحفظها.</p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 3px;">
+    <div class="tool-card" style="border-top-color: #4B2CBF;">
+      <div style="height:70px;background:#4B2CBF;border-radius:6px;margin-bottom:20px;"></div>
+      <div class="tool-name" style="font-size:16px;margin-bottom:4px;">Primary Purple</div>
+      <div style="font-family:'Poppins',monospace;font-size:14px;color:var(--purple-acc);margin-bottom:10px;">#4B2CBF</div>
+      <div class="tool-desc">Hook slides · الأرقام الكبيرة · الأيقونات · الـ dividers</div>
+    </div>
+    <div class="tool-card" style="border-top-color: #6D4CFF;">
+      <div style="height:70px;background:#6D4CFF;border-radius:6px;margin-bottom:20px;"></div>
+      <div class="tool-name" style="font-size:16px;margin-bottom:4px;">Accent Purple</div>
+      <div style="font-family:'Poppins',monospace;font-size:14px;color:var(--purple-acc);margin-bottom:10px;">#6D4CFF</div>
+      <div class="tool-desc">Stars · Summary boxes · Accent elements · Glow effects</div>
+    </div>
+    <div class="tool-card" style="border-top-color: #555;">
+      <div style="height:70px;background:#1A1A2E;border:1px solid #333;border-radius:6px;margin-bottom:20px;"></div>
+      <div class="tool-name" style="font-size:16px;margin-bottom:4px;">Dark Navy</div>
+      <div style="font-family:'Poppins',monospace;font-size:14px;color:var(--purple-acc);margin-bottom:10px;">#1A1A2E</div>
+      <div class="tool-desc">CTA slide · خلفية الـ video · النصوص الداكنة على أبيض</div>
+    </div>
+    <div class="tool-card" style="border-top-color: #aaa;">
+      <div style="height:70px;background:#FFFFFF;border:1px solid #ddd;border-radius:6px;margin-bottom:20px;"></div>
+      <div class="tool-name" style="font-size:16px;margin-bottom:4px;">White</div>
+      <div style="font-family:'Poppins',monospace;font-size:14px;color:var(--purple-acc);margin-bottom:10px;">#FFFFFF</div>
+      <div class="tool-desc">Content slides · النصوص على الخلفيات الداكنة · اللوجو على بنفسجي</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FINAL CALLOUT ─── -->
+<div class="callout purple-bg reveal">
+  <div class="callout-title">جاهز تبدأ؟</div>
+  <div class="callout-sub">
+    افتح Claude — قوله الموضوع —<br>
+    وابدأ تنتج محتوى بـ agency quality في 30 دقيقة.
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-brand">THE PRO <span>ENGLISH</span></div>
+  <div class="footer-center">
+    <div class="footer-slogan">أصحاب الطريقة الصح</div>
+    <div class="footer-url">theproenglish.io</div>
+  </div>
+  <div class="footer-meta">
+    CONTENT SYSTEM v2 // 2026<br>
+    Prepared by Costa Studio<br>
+    mazencostaa.netlify.app
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — DURHAM</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="../logo.jpeg">
+  <script src="./demo-data.js"></script>
+  <script src="./demo-mode.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="wrap">
+      <div class="nav-left">
+        <a class="nav-link" href="./shop.html">Shop</a>
+        <a class="nav-link" href="./about.html">About</a>
+      </div>
+      <a class="logo" href="./index.html">DURHAM</a>
+      <div class="nav-right">
+        <button class="nav-icon-btn" data-search-toggle>Search</button>
+        <button class="nav-icon-btn" data-cart-toggle>Cart (<span data-cart-count>0</span>)</button>
+      </div>
+    </div>
+    <div class="search-panel" data-search-panel>
+      <div class="wrap">
+        <form>
+          <input class="search-input" type="text" placeholder="Search products…" />
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <section class="shop-header">
+    <div class="wrap">
+      <div class="shop-title">Shop</div>
+    </div>
+  </section>
+
+  <section class="shop-grid">
+    <div class="wrap">
+      <div class="tabs">
+        <button class="tab-btn active" data-color="black">Black</button>
+        <button class="tab-btn" data-color="white">White</button>
+      </div>
+      <div class="product-grid" data-shop-grid></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-logo">DURHAM</div>
+        <div class="footer-links">
+          <a href="./shop.html">Shop</a>
+          <a href="./about.html">About</a>
+          <a href="./cart.html">Cart</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 DURHAM. Egypt.</div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay" data-drawer-overlay></div>
+  <aside class="cart-drawer" data-cart-drawer>
+    <div class="cart-drawer-header">
+      <span>Your Cart</span>
+      <button class="drawer-close" data-drawer-close aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-drawer-items" data-drawer-items></div>
+    <div class="cart-drawer-footer">
+      <div class="summary-row summary-total">
+        <span>Total</span>
+        <span data-drawer-total>EGP 0</span>
+      </div>
+      <a href="./cart.html" class="btn btn-primary btn-full">View Cart</a>
+    </div>
+  </aside>
+
+  <script src="./js/cart.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/cart-drawer.js"></script>
+  <script src="./js/shop.js"></script>
+</body>
+</html>
