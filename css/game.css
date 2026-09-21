@@ -1,0 +1,19 @@
+/* Logo Catcher — overlay + entry buttons */
+.cg-lock{overflow:hidden}
+.cg-overlay{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:rgba(10,10,10,.82);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.cg-overlay.show{opacity:1;visibility:visible}
+.cg-box{position:relative;height:min(92vh,calc(92vw * 1.5),780px);aspect-ratio:2/3;border:5px solid var(--ink,#111);border-radius:26px;box-shadow:10px 10px 0 var(--red,#E21B1B),0 0 0 6px #fff;overflow:hidden;background:#E21B1B;transform:scale(.9) rotate(-1.5deg);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.cg-overlay.show .cg-box{transform:none}
+.cg-cv{width:100%;height:100%;display:block;cursor:none}
+.cg-x{position:absolute;top:8px;right:8px;z-index:2;width:36px;height:36px;border-radius:50%;background:#fff;color:#111;border:3px solid #111;font:900 16px/1 var(--body,Cairo);cursor:pointer;box-shadow:2px 2px 0 #111;display:grid;place-items:center}
+.cg-x:hover{background:#111;color:#fff}
+
+/* entry buttons */
+.play-fab{position:fixed;bottom:24px;inset-inline-start:24px;z-index:890;display:flex;align-items:center;gap:8px;padding:9px 18px 9px 12px;background:var(--ink);color:#fff;border:3px solid #fff;border-radius:40px;box-shadow:4px 4px 0 var(--red);font:900 15px var(--body);cursor:pointer;animation:fabWig 5s ease-in-out infinite;transition:transform .2s}
+.play-fab:hover{transform:scale(1.08) rotate(-3deg)}
+.play-fab i{width:26px;height:26px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-style:normal;font-size:11px;border:2px solid #fff}
+@keyframes fabWig{0%,86%,100%{transform:none}90%{transform:rotate(-5deg) scale(1.05)}94%{transform:rotate(4deg) scale(1.05)}}
+.btn-play{background:#FFE14D;color:var(--ink)}
+.btn-play i{font-style:normal}
+@media(max-width:520px){.play-fab{bottom:18px;inset-inline-start:14px;padding:7px 14px 7px 9px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.play-fab{animation:none}}
